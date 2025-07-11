@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Envelope Romântico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" /> 
+    <script src="script.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="coracoes"></div>
+    <h1 id="titulo">Eu te amo<br>Feliz 9 meses! ❤️</h1>
+
+    <div class="envelope">
+      <div class="aba" id="aba"></div>
+      <div class="corpo">
+        <div class="carta" id="carta">
+          <p>
+            <strong>Meu amor,</strong><br>
+            <br>
+            <em>Sabe que eu amo coisas bregas, né? Então, aqui está uma carta de amor kkkkkk</em><br>
+            <br>
+            Sei que ja sabe dessa história, mas desde que começamos a conversar, sinto que encontrei a minha paz<br>
+            Você sempre aparecia quando eu estava mais desanimada, sempre me mandava mensagem nas manhãs que eu tinha que ir pro colégio<br>
+            Tentava sempre compartilhar tudo que acontecia no seu dia, e sempre estava lá quando eu queria conversar com alguém,
+            ou simplesmente só jogar papo fora.<br>
+            E então, começamos a namorar, e mesmo que tenha sido uma escolha muito repentina, por parte dos dois, eu não podia estar mais feliz com tudo isso,
+            com tudo que passamos juntos até aqui, com tudo que experimentamos juntos, e pode ter certeza, foi a melhor escolha que eu podia ter tomado, mesmo com 
+            todos os medos que eu tinha.<br>
+            Você pegou todas as minhas inseguranças, todos os meus medos e traumas, tudo que passava pela minha cabeça de mais tenebroso e todo o meu estresse, e encheu
+            de beijos e abraços, esquentando todo o meu coração solitário e medroso.<br>
+            Obrigada, por tudo, por ter me ajudado por todo esse tempo, por ser um namorado incrível, que sempre procura melhorar junto comigo, que sempre opta por conversar
+            para podermos resolver o que está acontecendo, obrigada por sempre me apoiar, por sempre me fazer rir, por sempre me fazer sentir amada e especial.<br>
+            Eu te amo, e espero que possamos passar muitos e muitos anos juntos, vivendo tudo que a vida tem a nos oferecer, e superando tudo que ela nos impõe.<br>
+            Obrigada por ser o meu porto seguro, por ser a minha paz, por ser a minha felicidade, por ser o meu melhor amigo, e por ser o meu namorado.<br>
+            Com muito amor,<br>
+            Seu Amor.<br>
+          </p>
+                       <div class="coracao" id="coracao">❤️
+        </div>
+      </div>
+    </div>
+  </div>
+      <button id="btnAbrir" onclick="abrirEnvelope()">Abrir envelope 💌</button>
+<script>
+  const btn = document.getElementById('btnAbrir');
+  const aba = document.getElementById('aba');
+  const carta = document.getElementById('carta');
+  const titulo = document.getElementById('titulo');
+
+  function abrirEnvelope() {
+    aba.classList.toggle('aberta');
+    carta.classList.toggle('visivel');
+    titulo.classList.toggle('subindo');
+
+    // Corações flutuantes
+    let intervaloCorações = setInterval(criarCoracaoFlutuante, 300);
+    setTimeout(() => clearInterval(intervaloCorações), 3000);
+  }
+
+  function criarCoracaoFlutuante() {
+    const coracao = document.createElement("div");
+    coracao.classList.add("coracao-flutuante");
+    coracao.textContent = "❤️";
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.querySelector(".coracoes").appendChild(coracao);
+    setTimeout(() => coracao.remove(), 4000);
+  }
+</script>
+</body>
+</html>
